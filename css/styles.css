@@ -1,5 +1,14 @@
-#result {
+h4 {
   display: none;
+  color: white;
+  text-align: center;
+}
+
+.box {
+  border: 2px solid white;
+  border-radius: 25px;
+  margin: 50px;
+  padding: 20px;
 }
 
 .jumbotron {

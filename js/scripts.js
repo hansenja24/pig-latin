@@ -23,7 +23,7 @@ $(document).ready(function() {
     wordsInput = wordsInput + wordsInput.charAt(0) + wordsInput.charAt(1);
     wordsInput += "ay";
     wordsInput = wordsInput.substring(2);
-    alert(wordsInput);
+    $("h4").show().text(wordsInput);
     value = false;
   }
 
@@ -31,7 +31,7 @@ $(document).ready(function() {
   vowels.forEach(function(vowel) {
     if (wordsInput.charAt(0) === vowel && value === true) {
       wordsInput += "way";
-      alert(wordsInput)
+      $("h4").show().text(wordsInput);
       value = false;
     }
   });
@@ -42,7 +42,7 @@ $(document).ready(function() {
       wordsInput += wordsInput.charAt(0);
       wordsInput += "ay";
       wordsInput = wordsInput.substr(1);
-      alert(wordsInput);
+      $("h4").show().text(wordsInput);
       value = false;
     }
   });
@@ -53,7 +53,7 @@ $(document).ready(function() {
       wordsInput += wordsInput.charAt(0);
       wordsInput += "ay";
       wordsInput = wordsInput.substr(1);
-      alert(wordsInput);
+      $("h4").show().text(wordsInput);
       value = false;
     }
   });
@@ -78,7 +78,7 @@ $(document).ready(function() {
     // wordsInput = wordsInput + wordsInput.charAt(0) + wordsInput.charAt(1);
     wordsInput += "ay";
     wordsInput = wordsInput.substr(num);
-    alert(wordsInput);
+    $("h4").show().text(wordsInput);
     value = false;
     }
   });
