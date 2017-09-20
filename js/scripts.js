@@ -4,11 +4,13 @@ $(document).ready(function() {
     var wordsInput = $("#input").val();
     var vowels = ["a", "A", "e", "E", "i", "I", "u", "U", "o", "O"];
     var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+    var num = 0;
 
-    value = true
+    var value = true;
+    var value2 = true;
 
-    // debugger;
 
+// Numbers
   numbers.forEach(function(number) {
     if (wordsInput.charAt(0) == number && value === true) {
       alert('Please enter valid characters.')
@@ -16,14 +18,16 @@ $(document).ready(function() {
     }
   });
 
+// qu
   if(wordsInput.charAt(0) === "q" && wordsInput.charAt(1) ==="u" && value === true){
     wordsInput = wordsInput + wordsInput.charAt(0) + wordsInput.charAt(1);
     wordsInput += "ay";
     wordsInput = wordsInput.substring(2);
     alert(wordsInput);
     value = false;
+  }
 
-}
+  // Vowel
   vowels.forEach(function(vowel) {
     if (wordsInput.charAt(0) === vowel && value === true) {
       wordsInput += "way";
@@ -32,6 +36,7 @@ $(document).ready(function() {
     }
   });
 
+// One Consonant
   vowels.forEach(function(vowel) {
     if (wordsInput.charAt(0) !== vowel && wordsInput.charAt(1) === vowel && value === true) {
       wordsInput += wordsInput.charAt(0);
@@ -42,6 +47,7 @@ $(document).ready(function() {
     }
   });
 
+// One Consonant
   vowels.forEach(function(vowel) {
     if (wordsInput.charAt(0) !== vowel && wordsInput.charAt(1) === vowel && value === true) {
       wordsInput += wordsInput.charAt(0);
@@ -51,16 +57,30 @@ $(document).ready(function() {
       value = false;
     }
   });
+
+  // Multiple Consonants
+  var num;
+  for(i =0;i <= wordsInput.length; i++){
+    vowels.forEach(function(vowel){
+      if(wordsInput.charAt(i) === vowel && value2 === true){
+        num = i;
+        value2 = false;
+      }
+    })
+  }
 
   vowels.forEach(function(vowel) {
     if (wordsInput.charAt(0) !== vowel && wordsInput.charAt(1) !== vowel && value === true) {
-    wordsInput = wordsInput + wordsInput.charAt(0) + wordsInput.charAt(1);
+
+    for(i=0;i < num;i++){
+      wordsInput = wordsInput + wordsInput.charAt(i);
+    }
+    // wordsInput = wordsInput + wordsInput.charAt(0) + wordsInput.charAt(1);
     wordsInput += "ay";
-    wordsInput = wordsInput.substr(2);
+    wordsInput = wordsInput.substr(num);
     alert(wordsInput);
     value = false;
     }
   });
-
 });
 });
