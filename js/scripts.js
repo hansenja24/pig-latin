@@ -27,6 +27,12 @@ $(document).ready(function() {
   //     };
   //   });
   // });
+  numbers.forEach(function(number) {
+    if (wordsInput.charAt(0) == number && value === true) {
+      alert('Please enter alphabetical words only.')
+      value = false;
+    }
+  });
 
   vowels.forEach(function(vowel) {
     if (wordsInput.charAt(0) === vowel) {
@@ -58,6 +64,7 @@ $(document).ready(function() {
     value = false;
     }
   });
+
 });
 });
 
